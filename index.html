@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>紹詠 AI 待辦事項網站</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">紹詠's AI Website</div>
+    <ul>
+      <li>AI助理</li>
+      <li>待辦事項</li>
+      <li>學習管理</li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-text">
+      <p class="tag">期末整合作品</p>
+      <h1>我的未來，由 <span>AI</span> 主宰</h1>
+      <p>
+        本網站整合互動式虛擬 AI 網頁與待辦事項系統，
+        可透過 AI 指令新增、完成、刪除與查詢待辦事項。
+      </p>
+
+      <div class="chat-box">
+        <input id="userInput" type="text" placeholder="例如：新增待辦：讀統計 分類：學校" />
+        <button id="sendBtn">送出指令</button>
+      </div>
+
+      <div id="aiResponse" class="ai-response">AI 回應：等待你的指令中...</div>
+
+      <div class="tips">
+        可輸入：新增待辦、完成待辦、刪除待辦、清除已完成、有幾個待辦、切換主題
+      </div>
+    </div>
+
+    <div class="hero-img">
+      <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80" />
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card stats-card">
+      <h2>今日資訊</h2>
+      <p id="dateTime"></p>
+
+      <div class="stats">
+        <div>
+          <h3 id="totalCount">0</h3>
+          <p>總待辦</p>
+        </div>
+        <div>
+          <h3 id="doneCount">0</h3>
+          <p>已完成</p>
+        </div>
+        <div>
+          <h3 id="rateCount">0%</h3>
+          <p>完成率</p>
+        </div>
+      </div>
+
+      <div class="progress">
+        <div id="progressBar"></div>
+      </div>
+    </section>
+
+    <section class="card todo-card">
+      <h2>待辦事項清單</h2>
+
+      <div class="todo-input">
+        <input id="todoInput" type="text" placeholder="輸入待辦事項" />
+
+        <select id="categoryInput">
+          <option value="學校">學校</option>
+          <option value="生活">生活</option>
+          <option value="工作">工作</option>
+          <option value="其他">其他</option>
+        </select>
+
+        <button id="addTodoBtn">新增</button>
+      </div>
+
+      <div class="filter-buttons">
+        <button onclick="setFilter('全部')">全部</button>
+        <button onclick="setFilter('學校')">學校</button>
+        <button onclick="setFilter('生活')">生活</button>
+        <button onclick="setFilter('工作')">工作</button>
+        <button onclick="setFilter('其他')">其他</button>
+      </div>
+
+      <ul id="todoList"></ul>
+
+      <div class="extra-buttons">
+        <button id="clearDoneBtn">清除已完成</button>
+        <button id="themeBtn">切換主題</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    期末作品｜AI互動網頁 × 待辦事項實作｜蔡紹詠
+  </footer>
+
+  <script src="java.js"></script>
+</body>
+</html>  
